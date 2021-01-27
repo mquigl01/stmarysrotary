@@ -1,0 +1,303 @@
+.App {
+  text-align: center;
+}
+
+/* Style the image inside the centered container, if needed */
+.centered img {
+  width: 150px;
+  border-radius: 50%;
+}
+
+html {
+  background-color: white; 
+  text-align: center;
+  font-family: 'Open Sans Condensed',Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 40px;
+  font-weight: bold;
+  color: #006699;
+  padding: 30px;
+  padding-bottom: 0px;
+  margin: auto;
+  text-align: center;
+  font-family: 'Open Sans Condensed',Helvetica,Arial,sans-serif;
+}
+
+p {
+  line-height: 100%;
+  color: black;
+  font-size: 18px;
+  font-weight: lighter;
+  line-height: 1.42857143;
+  font-family: Georgia,'Times New Roman',Times,serif;
+}
+
+li {
+  line-height: 100%;
+  color: black;
+  font-size: 20px;
+}
+
+.tabHeader {
+  border-top: 40px solid #17458f;
+  font-family: 'Open Sans Condensed',Helvetica,Arial,sans-serif;
+  min-height: 70px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  padding-top: 20px;
+  background-color: #005daa;
+}
+
+footer {
+  background-color: #005daa;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  width: 200px;
+  border: 2px solid #005daa;
+  border-top: none;
+  padding: 2px 2px;
+  z-index: 1;
+  border-radius: 10px;
+}
+
+.dropdown:hover {
+  color:#006699;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.menu {
+  width: 50px;
+  border: 1px solid lightgrey;
+  position: relative;
+  display: block;
+}
+
+input {
+    width: 50%;
+    padding: 12px;
+    border: 1px solid grey;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+textarea {
+    width: 50%;
+    height: 120px;
+     padding: 12px;
+     border: 1px solid grey;
+     border-radius: 4px;
+     box-sizing: border-box;
+     margin-top: 6px;
+     margin-bottom: 16px;
+     resize: vertical;
+}
+
+
+button {
+  font-size: 24px;
+  font-weight: bold;
+  color:#006699;
+  background-color: white;
+  border: 2px solid #006699;
+  padding: 10px;
+  text-decoration: none;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 4px;
+  margin: 20px;
+}
+
+button:hover {
+  color:white;
+  background-color: #006699;
+}
+
+label {
+  font-size: 30px;
+  color: black;
+  margin: 20px;
+  min-height: 30px;
+  min-width: 100px;
+}
+
+.tabContent {
+  font-family: 'proxima_nova_rgregular', Helvetica, Arial, sans-serif;
+  text-align: center;
+  max-width: 80%;
+  padding: 20px;
+  padding-top: 200px;
+  border: none;
+  margin: auto;
+  border-top: none;
+  background-color: white; 
+}
+
+
+
+
+
+
+
+
+div.fullscreen-group {
+  position: relative;
+}
+div.fullscreen-group::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.9);
+  z-index: 1;
+  pointer-events: none;
+  touch-action: none;
+  opacity: 0;
+  transition: inherit;
+}
+div.fullscreen-group.fullscreen-group--expanded::before {
+  opacity: 1;
+  z-index: 1;
+  pointer-events: initial;
+  touch-action: initial;
+}
+div.fullscreen-group.fullscreen-group--expanded button.fullscreen-toggle {
+  opacity: 1;
+}
+div.fullscreen-group.fullscreen-group--expanded button.fullscreen-btn {
+  cursor: zoom-out;
+}
+
+div.fullscreen-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+button.fullscreen-toggle {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  padding: 20px;
+  border: none;
+  background: none;
+  opacity: 0;
+  transition: inherit;
+  cursor: pointer;
+  z-index: 9;
+  transition: background 250ms ease;
+}
+button.fullscreen-toggle:active {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+button.fullscreen-toggle.toggle--left {
+  left: 0;
+}
+button.fullscreen-toggle.toggle--right {
+  right: 0;
+}
+
+button.fullscreen-btn {
+  border: none;
+  background: none;
+  position: inherit;
+  top: inherit;
+  left: inherit;
+  right: inherit;
+  bottom: inherit;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  -webkit-appearance: none;
+  cursor: zoom-in;
+  outline: none;
+}
+
+button.fullscreen-exit-btn {
+  border: none;
+  background: none;
+  position: fixed;
+  top: 20px;
+  right: 0;
+  padding: 20px;
+  -webkit-appearance: none;
+  cursor: pointer;
+  z-index: 10;
+}
+
+div.fullscreen-image {
+  position: inherit;
+  top: inherit;
+  left: inherit;
+  right: inherit;
+  bottom: inherit;
+}
+
+.container {
+  padding: 15px;
+}
+
+ul.images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.images > li {
+  position: relative;
+  padding-top: 66%;
+}
+
+ul.images > li img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 567px) {
+  ul.images {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+
+@font-face {
+  font-family: 'Open Sans Condensed';
+  src: url('Fonts/OpenSansCondensed-Light.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+} 

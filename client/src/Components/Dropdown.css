@@ -1,0 +1,34 @@
+.Dropdown{
+    position: relative;
+    margin: 2em 3em;
+}
+
+.m-item{
+    top: 0;
+
+    width: 5.5em;
+    background-color: transparent;
+
+    padding: 0.2em;
+
+    border-radius: 1em;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.5em;
+    color: black;
+    cursor: pointer;
+
+    transition: 1s;
+    background-color: #005daa;
+}
+
+.m-item:hover{
+    color: #f7a81b;
+}
+
+.m-logo{
+    z-index: 1;
+}
