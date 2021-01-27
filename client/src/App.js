@@ -4,13 +4,12 @@ import HomeForm from "./Components/HomeForm";
 import CovidReliefForm from "./Components/CovidReliefForm";
 import Contact from "./Components/ContactForm";
 import { BrowserRouter as Router, Route, Link, Switch} from "react-router-dom";
-import { createBrowserHistory } from 'history';
 import MediaQuery  from 'react-responsive';
 import CheeseburgerMenu from 'cheeseburger-menu';
 import HamburgerMenu from 'react-hamburger-menu';
 import { SocialIcon } from 'react-social-icons';
-
-let history = null;
+import logo from './Components/Images/logo.png';
+import history from './Components/history';
 
 const mobileOptions = {
   backgroundColor: "white",
@@ -42,8 +41,6 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
-    history = createBrowserHistory();
-
     this.state = {
       title: "",
       date: "",
@@ -71,7 +68,6 @@ class App extends React.Component {
     this.hoverCovidReliefOff = this.hoverCovidReliefOff.bind(this);
     this.selectCovidRelief = this.selectCovidRelief.bind(this);
     
-    this.updateHistory = this.updateHistory.bind(this);
     this.changeDropDown = this.changeDropDown.bind(this);
     this.showMenu = this.showMenu.bind(this); 
     this.closeMenu = this.closeMenu.bind(this);
@@ -96,9 +92,6 @@ class App extends React.Component {
     this.setState({ menuOpen: false })
   }
 
-  updateHistory() {
-    history = createBrowserHistory();
-  }
 
   async selectCovidRelief() {
     this.setState({ hoverContact: false });
@@ -158,9 +151,9 @@ class App extends React.Component {
           <div>
               <MediaQuery query='(min-width: 1224px)'>
                 <nav className="tabHeader">
-                <img alt="St Marys Rotary Club" src={require("./Components/Images/logo.png")} style={{position: "absolute", left: "50px", top: "0px"}}/>
+                <img alt="St Marys Rotary Club" src={logo} style={{width: "300px", height: "100px", position: "absolute", left: "50px", top: "0px"}}/>
 
-                <div style={{float:"Right", paddingRight: "60px"}}>
+                <div style={{float:"Right", paddingRight: "60px", paddingTop: "30px"}}>
                   {history.location.pathname === "/" && 
                     <Link 
                     style={hoverTabStyle} 
@@ -225,8 +218,11 @@ class App extends React.Component {
           </MediaQuery>
 
           <MediaQuery query='(max-width: 1223px)'>
-            <div className="header" style={{margin: "10px"}}>
+            <div className="tabHeader">
+                <img alt="St Marys Rotary Club" src={logo} style={{width: "220px", height: "100px", position: "absolute", left: "80px", top: "0px"}}/>
+
                 <CheeseburgerMenu
+                  right={true}
                   isOpen={this.state.menuOpen}
                   closeCallback={this.closeMenu.bind(this)}>
                         <Link onClick={this.closeMenu.bind(this)} style={{textDecoration: "none"}} to="/">
@@ -251,10 +247,8 @@ class App extends React.Component {
                   color='black'
                   borderRadius={0}
                   animationDuration={0.5}
+                  className="hamburgerMenu"
                 />
-            <div  style={{paddingBottom: "30px"}}>
-            <img alt="St Marys Rotary Club" src={require("./Components/Images/logo.png")} style={{position: "absolute", left: "100px", top: "0px"}}/>
-            </div>
             </div>
         </MediaQuery>
 
@@ -266,11 +260,6 @@ class App extends React.Component {
         </div>
       </Router> <br></br>
 
-      
-        <SocialIcon style={{margin: "20px", width: "30px", height: "30px"}} url="https://www.facebook.com/rotarystmarys/" />
-        <SocialIcon style={{margin: "20px", width: "30px", height: "30px"}} url="https://rotarystmarys.ca/" />
-        <SocialIcon style={{margin: "20px", width: "30px", height: "30px"}} url="https://www.youtube.com/channel/UC-0erRNbG4J7gCSg0XVHSSQ" />
-
       <footer>
       <p>The Rotary Club of St. Marys <br/>
         22 St. Andrews St. N.,<br/>
@@ -278,6 +267,12 @@ class App extends React.Component {
         Mailing address: 12-20 Huron St. N., <br/> 
         St. Marys, ON N4X 1C5
         </p>
+        
+        <div className="socalIcons">
+          <SocialIcon style={{margin: "20px", width: "30px", height: "30px"}} url="https://www.facebook.com/rotarystmarys/" />
+          <SocialIcon style={{margin: "20px", width: "30px", height: "30px"}} url="https://rotarystmarys.ca/" />
+          <SocialIcon style={{margin: "20px", width: "30px", height: "30px"}} url="https://www.youtube.com/channel/UC-0erRNbG4J7gCSg0XVHSSQ" />
+        </div>
         </footer>
       </div>
     );
